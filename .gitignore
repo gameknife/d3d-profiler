@@ -26,3 +26,8 @@
 *.exe
 *.out
 *.app
+immediate/
+bin/
+*.opensdf
+*.sdf
+ipch/
