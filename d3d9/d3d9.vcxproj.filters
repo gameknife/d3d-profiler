@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="xD3DObject">
+      <UniqueIdentifier>{b55d402b-5187-4486-9771-3604a8d18df2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xVirtualApp">
+      <UniqueIdentifier>{dba53311-fa3a-447d-be03-b28bcf820880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xD3DObject\xResource">
+      <UniqueIdentifier>{02636a03-0041-4129-b373-e93baf5db993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xD3DObject\xDevice">
+      <UniqueIdentifier>{e587f262-87d9-456f-9b3a-7b6af8305291}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xVirtualApp\xHelpers">
+      <UniqueIdentifier>{d9006a62-9b9e-4a39-af2a-2c2328c0efd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xVirtualApp\xHelpers\InputSystem">
+      <UniqueIdentifier>{5b073396-c3eb-4f96-a645-82c9ec468312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xVirtualApp\xHelpers\log">
+      <UniqueIdentifier>{d2421a52-7f98-4c31-b3fe-65aa7cfa930d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xVirtualApp\xHelpers\profiler">
+      <UniqueIdentifier>{a3eed5d4-922a-4947-8f42-1a36966e41ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xVirtualApp\xHelpers\text">
+      <UniqueIdentifier>{30908ab6-ffbc-48a8-a3ca-6c7e05cbe725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xVirtualApp\xHelpers\in_gui">
+      <UniqueIdentifier>{7d550e55-061c-4d1a-9aee-7831b60d7f36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xVirtualApp\xHelpers\AuxRenderer">
+      <UniqueIdentifier>{1f2fd91a-7401-4431-96a2-c8c0d75d1c83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xVirtualApp\xWrapResource">
+      <UniqueIdentifier>{c17de013-b85d-4998-80ae-5907e8ac433f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="APIMonitor">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="d3d9.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="xAPICallMonitor.cpp">
+      <Filter>APIMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="xVirtualApp.cpp">
+      <Filter>xVirtualApp</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DDevice9.cpp">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3D9.cpp">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DSwapChain9.cpp">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DTexture9.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DVertexBuffer9.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DVertexShader9.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DPixelShader9.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DIndexBuffer9.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DResourceBase.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>xVirtualApp\xHelpers\InputSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>xVirtualApp\xHelpers\log</Filter>
+    </ClCompile>
+    <ClCompile Include="xProfiler.cpp">
+      <Filter>xVirtualApp\xHelpers\profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="xTextFlusher.cpp">
+      <Filter>xVirtualApp\xHelpers\text</Filter>
+    </ClCompile>
+    <ClCompile Include="xAuxRenderer.cpp">
+      <Filter>xVirtualApp\xHelpers\AuxRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="xInGUI.cpp">
+      <Filter>xVirtualApp\xHelpers\in_gui</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DVertexDeclaration9.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DCubeTexture9.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DSurface9.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DQuery9.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DVolume9.cpp">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3D9Ex.cpp">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3DDevice9Ex.cpp">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedMem.cpp">
+      <Filter>xVirtualApp\xHelpers\log</Filter>
+    </ClCompile>
+    <ClCompile Include="SwMouse.cpp">
+      <Filter>xVirtualApp\xHelpers\InputSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SrCamera.cpp">
+      <Filter>xVirtualApp\xHelpers</Filter>
+    </ClCompile>
+    <ClCompile Include="xDirect3D11.cpp">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="xDXGIFactory1.cpp">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="xDXGISwapChain.cpp">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="xD3D11DeviceContext.cpp">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="IDXGIAdpater1.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="xd3d9.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="xAPICallMonitor.h">
+      <Filter>APIMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="xVirtualApp.h">
+      <Filter>xVirtualApp</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>xVirtualApp\xHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DDevice9.h">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3D9.h">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DSwapChain9.h">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DVertexBuffer9.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DTexture9.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DVertexShader9.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DPixelShader9.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DIndexBuffer9.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DResourceBase.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xMath.h">
+      <Filter>xVirtualApp\xHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>xVirtualApp\xHelpers\InputSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>xVirtualApp\xHelpers\log</Filter>
+    </ClInclude>
+    <ClInclude Include="xProfiler.h">
+      <Filter>xVirtualApp\xHelpers\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="xTextFlusher.h">
+      <Filter>xVirtualApp\xHelpers\text</Filter>
+    </ClInclude>
+    <ClInclude Include="xAuxRenderer.h">
+      <Filter>xVirtualApp\xHelpers\AuxRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="xInGUI.h">
+      <Filter>xVirtualApp\xHelpers\in_gui</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DVertexDeclaration9.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DCubeTexture9.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DSurface9.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xModel.h">
+      <Filter>xVirtualApp\xWrapResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DResourceHelper.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DQuery9.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DVolume9.h">
+      <Filter>xD3DObject\xResource</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3D9Ex.h">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3DDevice9Ex.h">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedMem.h">
+      <Filter>xVirtualApp\xHelpers\log</Filter>
+    </ClInclude>
+    <ClInclude Include="SwMouse.h">
+      <Filter>xVirtualApp\xHelpers\InputSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SrCamera.h">
+      <Filter>xVirtualApp\xHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix.h">
+      <Filter>xVirtualApp\xHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="quaternion.h">
+      <Filter>xVirtualApp\xHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="vector.h">
+      <Filter>xVirtualApp\xHelpers</Filter>
+    </ClInclude>
+    <ClInclude Include="xDirect3D11.h">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="xD3D11DeviceContext.h">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="xDXGISwapChain.h">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="xDXGIFactory1.h">
+      <Filter>xD3DObject\xDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="IDXGIAdpater1.h">
+      <Filter>APIMonitor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="d3d9.def">
+      <Filter>System</Filter>
+    </None>
+  </ItemGroup>
+</Project>
