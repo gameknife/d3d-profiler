@@ -175,16 +175,22 @@ void xLogger::Log( const char* line )
 
 void xLogger::LogE( const char* line )
 {
-	char buffer[2048];
+	uint32 length = strlen(line);
+	char* buffer = new char[length + 2048];
 	sprintf(buffer, "$3%s", line);
 	Log( buffer );
+
+	delete[] buffer;
 }
 void xLogger::LogV( const char* format, va_list args )
 {
-	char buffer[2048];
+	uint32 length = strlen(format);
+	char* buffer = new char[length + 2048];
 	vsprintf( buffer, format, args );
 
 	Log( buffer );
+
+	delete[] buffer;
 }
 
 void xLogger::FlushToFile()

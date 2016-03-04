@@ -19,8 +19,8 @@ struct xCostElement
 	}
 };
 
-typedef stdext::hash_map< std::string, bool > xFuncMap;
-typedef stdext::hash_map< std::string, xCostElement > xCostMap;
+typedef std::map< std::string, bool > xFuncMap;
+typedef std::map< std::string, xCostElement > xCostMap;
 
 struct xFuncTicker
 {

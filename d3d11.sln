@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "d3d11", "d3d9\d3d9.vcxproj", "{642436D9-B7F3-4E64-A5DA-9BD31AB4B941}"
 EndProject
 Global
@@ -19,7 +21,8 @@ Global
 		{642436D9-B7F3-4E64-A5DA-9BD31AB4B941}.Debug|x64.Build.0 = Debug|x64
 		{642436D9-B7F3-4E64-A5DA-9BD31AB4B941}.Profile|Win32.ActiveCfg = Release|Win32
 		{642436D9-B7F3-4E64-A5DA-9BD31AB4B941}.Profile|Win32.Build.0 = Release|Win32
-		{642436D9-B7F3-4E64-A5DA-9BD31AB4B941}.Profile|x64.ActiveCfg = Release|Win32
+		{642436D9-B7F3-4E64-A5DA-9BD31AB4B941}.Profile|x64.ActiveCfg = Release|x64
+		{642436D9-B7F3-4E64-A5DA-9BD31AB4B941}.Profile|x64.Build.0 = Release|x64
 		{642436D9-B7F3-4E64-A5DA-9BD31AB4B941}.Release|Win32.ActiveCfg = Release|Win32
 		{642436D9-B7F3-4E64-A5DA-9BD31AB4B941}.Release|Win32.Build.0 = Release|Win32
 		{642436D9-B7F3-4E64-A5DA-9BD31AB4B941}.Release|x64.ActiveCfg = Release|x64

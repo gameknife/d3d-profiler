@@ -30,6 +30,7 @@ public:
 
 	}
 	ID3D11Device* m_device;
+	ID3D11DeviceContext* m_deviceContex;
 
 public:
 	virtual HRESULT STDMETHODCALLTYPE CreateBuffer( 
@@ -55,6 +56,8 @@ public:
 		const D3D11_SUBRESOURCE_DATA *pInitialData,
 
 		ID3D11Texture2D **ppTexture2D);
+
+	static void SaveToFile(ID3D11Texture2D* tex2d, ID3D11DeviceContext* context, const char* prefix);
 
 	virtual HRESULT STDMETHODCALLTYPE CreateTexture3D( 
 

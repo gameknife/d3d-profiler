@@ -1,4 +1,8 @@
 #include "xD3D11DeviceContext.h"
+#include "Logger.h"
+
+#include "D3DX11tex.h"
+#include "xDirect3D11.h"
 
 void STDMETHODCALLTYPE xD3D11DeviceContext::VSSetConstantBuffers(UINT StartSlot, UINT NumBuffers, ID3D11Buffer *const *ppConstantBuffers)
 {
@@ -27,22 +31,53 @@ void STDMETHODCALLTYPE xD3D11DeviceContext::VSSetShader(ID3D11VertexShader *pVer
 
 void STDMETHODCALLTYPE xD3D11DeviceContext::DrawIndexed(UINT IndexCount, UINT StartIndexLocation, INT BaseVertexLocation)
 {
+	//LOGFUNCENTRY
 	return m_device->DrawIndexed(IndexCount, StartIndexLocation, BaseVertexLocation);
 }
 
 void STDMETHODCALLTYPE xD3D11DeviceContext::Draw(UINT VertexCount, UINT StartVertexLocation)
 {
+	//LOGFUNCENTRY
 	return m_device->Draw(VertexCount, StartVertexLocation);
 }
 
+std::map<ID3D11Texture2D*, D3D11_MAPPED_SUBRESOURCE*> m_tex2dDatas;
+
 HRESULT STDMETHODCALLTYPE xD3D11DeviceContext::Map(ID3D11Resource *pResource, UINT Subresource, D3D11_MAP MapType, UINT MapFlags, D3D11_MAPPED_SUBRESOURCE *pMappedResource)
 {
+	ID3D11Texture2D* tex2d = NULL;
+	HRESULT hr = pResource->QueryInterface(IID_ID3D11Texture2D, (void **)&tex2d);
+	if (FAILED(hr)) {
+		// handle failure here.
+	}
+	else
+	{
+
+	}
+
+	//LOGFUNCENTRY
+	//ID3D11Texture2D* tex2d = dynamic_cast<ID3D11Texture2D*>(pResource);
+	//if (tex2d != NULL)
+	{
+		//m_tex2dDatas[tex2d] = pMappedResource;
+	}
 	return m_device->Map(pResource, Subresource, MapType, MapFlags, pMappedResource);
 }
 
 void STDMETHODCALLTYPE xD3D11DeviceContext::Unmap(ID3D11Resource *pResource, UINT Subresource)
 {
-	return m_device->Unmap(pResource, Subresource);
+	m_device->Unmap(pResource, Subresource);
+
+
+	ID3D11Texture2D* tex2d = NULL;
+	HRESULT hr = pResource->QueryInterface(IID_ID3D11Texture2D, (void **)&tex2d);
+	if (FAILED(hr)) {
+		// handle failure here.
+	}
+	else
+	{
+		xD3D11Device::SaveToFile(tex2d, m_device, "dyn_unmap_");
+	}
 }
 
 void STDMETHODCALLTYPE xD3D11DeviceContext::PSSetConstantBuffers(UINT StartSlot, UINT NumBuffers, ID3D11Buffer *const *ppConstantBuffers)
@@ -198,16 +233,52 @@ void STDMETHODCALLTYPE xD3D11DeviceContext::RSSetScissorRects(UINT NumRects, con
 void STDMETHODCALLTYPE xD3D11DeviceContext::CopySubresourceRegion(ID3D11Resource *pDstResource, UINT DstSubresource, UINT DstX, UINT DstY, UINT DstZ, ID3D11Resource *pSrcResource, UINT SrcSubresource, const D3D11_BOX *pSrcBox)
 {
 	return m_device->CopySubresourceRegion(pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBox);
+
+	ID3D11Texture2D* tex2d = NULL;
+	HRESULT hr = pDstResource->QueryInterface(IID_ID3D11Texture2D, (void **)&tex2d);
+	if (FAILED(hr)) {
+		// handle failure here.
+
+
+	}
+	else
+	{
+		xD3D11Device::SaveToFile(tex2d, m_device, "dyn_subres_");
+	}
 }
 
 void STDMETHODCALLTYPE xD3D11DeviceContext::CopyResource(ID3D11Resource *pDstResource, ID3D11Resource *pSrcResource)
 {
 	return m_device->CopyResource(pDstResource, pSrcResource);
+
+	ID3D11Texture2D* tex2d = NULL;
+	HRESULT hr = pDstResource->QueryInterface(IID_ID3D11Texture2D, (void **)&tex2d);
+	if (FAILED(hr)) {
+		// handle failure here.
+
+
+	}
+	else
+	{
+		xD3D11Device::SaveToFile(tex2d, m_device, "dyn_cpyres_");
+	}
 }
 
 void STDMETHODCALLTYPE xD3D11DeviceContext::UpdateSubresource(ID3D11Resource *pDstResource, UINT DstSubresource, const D3D11_BOX *pDstBox, const void *pSrcData, UINT SrcRowPitch, UINT SrcDepthPitch)
 {
-	return m_device->UpdateSubresource(pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+	m_device->UpdateSubresource(pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+
+	ID3D11Texture2D* tex2d = NULL;
+	HRESULT hr = pDstResource->QueryInterface(IID_ID3D11Texture2D, (void **)&tex2d);
+	if (FAILED(hr)) {
+		// handle failure here.
+
+
+	}
+	else
+	{
+		xD3D11Device::SaveToFile(tex2d, m_device, "dyn_update_");
+	} 
 }
 
 void STDMETHODCALLTYPE xD3D11DeviceContext::CopyStructureCount(ID3D11Buffer *pDstBuffer, UINT DstAlignedByteOffset, ID3D11UnorderedAccessView *pSrcView)
@@ -253,6 +324,17 @@ FLOAT STDMETHODCALLTYPE xD3D11DeviceContext::GetResourceMinLOD(ID3D11Resource *p
 void STDMETHODCALLTYPE xD3D11DeviceContext::ResolveSubresource(ID3D11Resource *pDstResource, UINT DstSubresource, ID3D11Resource *pSrcResource, UINT SrcSubresource, DXGI_FORMAT Format)
 {
 	return m_device->ResolveSubresource(pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
+	ID3D11Texture2D* tex2d = NULL;
+	HRESULT hr = pDstResource->QueryInterface(IID_ID3D11Texture2D, (void **)&tex2d);
+	if (FAILED(hr)) {
+		// handle failure here.
+
+
+	}
+	else
+	{
+		xD3D11Device::SaveToFile(tex2d, m_device, "dyn_resolve_");
+	}
 }
 
 void STDMETHODCALLTYPE xD3D11DeviceContext::ExecuteCommandList(ID3D11CommandList *pCommandList, BOOL RestoreContextState)

@@ -19,7 +19,7 @@
 #include <functional>
 #include <string>
 
-#include <hash_map>
+//#include <hash_map>
 
 #include "d3d9.h"
 #include "d3d11.h"
@@ -101,6 +101,8 @@ struct FIXEDVERT
 	DWORD texcoord0;       // d3dcolor
 };
 
+#define LOGFUNCENTRY //gEnv->logger->LogE(__FUNCTION__);
+
 #define XUI_BG_BLACK float4(0.0, 0.0, 0.0, 0.85)
 #define XUI_BG_NORMAL float4(0.1, 0.1, 0.1, 0.85)
 #define XUI_BG_HOVER float4(0.1, 0.1, 0.1, 1.0)
@@ -120,6 +122,19 @@ inline void GetConfig( const char* app, const char* key, char* buffer )
 		*strLastSlash = 0;
 	strcat( strExePath, "\\d3d9_profile.ini");
 	GetPrivateProfileString( app, key, "", buffer, 255, strExePath  );
+}
+
+inline std::string GetRootPath()
+{
+	char strExePath[MAX_PATH] = { 0 };
+	char* strLastSlash = NULL;
+	GetModuleFileNameA(NULL, strExePath, MAX_PATH);
+	strExePath[MAX_PATH - 1] = 0;
+	strLastSlash = strrchr(strExePath, L'\\');
+	if (strLastSlash)
+		*strLastSlash = 0;
+
+	return strExePath;
 }
 
 

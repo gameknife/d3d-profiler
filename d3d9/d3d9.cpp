@@ -74,8 +74,8 @@ extern "C" __declspec(dllexport) HRESULT __stdcall D3D11CreateDevice(
 	gEnv = new xGlobalEnv;
 	g_vApp = new xVirtualApp();
 
-	gEnv->logger->LogE("CreateDevice11");
-	MessageBox(NULL, "成功注入！！！", "哈哈", MB_OK);
+	gEnv->logger->LogE("Create Device11, Injected.");
+	//MessageBox(NULL, "成功注入！！！", "哈哈", MB_OK);
 
 	ID3D11Device* pDevice = NULL;
 	ID3D11DeviceContext* pImmediateContext= NULL;
@@ -84,6 +84,9 @@ extern "C" __declspec(dllexport) HRESULT __stdcall D3D11CreateDevice(
 
 	xD3D11Device* device = new xD3D11Device( pDevice );
 	xD3D11DeviceContext* context = new xD3D11DeviceContext(pImmediateContext);
+
+	device->m_deviceContex = pImmediateContext;
+
 
 	*ppDevice = device;
 	*ppImmediateContext = context;
@@ -158,7 +161,7 @@ extern "C" __declspec(dllexport)  HRESULT __stdcall D3D11CreateDeviceAndSwapChai
 	D3D_FEATURE_LEVEL* pFeatureLevel,
 	ID3D11DeviceContext** ppImmediateContext )
 {
-	gEnv->logger->Log("CreateSwapChain&Device");
+	gEnv->logger->Log("CreateSwapChain & Device");
 
 	return S_OK;
 }

@@ -37,7 +37,7 @@ struct xDirect3DResourceBase
 	res_index m_d3dIndex;
 };
 
-typedef stdext::hash_map<res_index, res_index> xResourceLib;
+typedef std::map<res_index, res_index> xResourceLib;
 typedef std::vector<xModel> xModelLib;
 typedef std::vector<xDirect3DTexture9*> xTextureArray;
 
